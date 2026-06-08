@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validación QR</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <main class="login-card">
+        <h1>QR de visita</h1>
+        <p>Presente esta pantalla al agente de garita.</p><input id="token" readonly>
+        <p>El agente puede copiar este token en el módulo de registro QR.</p>
+    </main>
+    <script>const params = new URLSearchParams(location.search); document.getElementById('token').value = params.get('token') || '';</script>
+</body>
+
+</html>

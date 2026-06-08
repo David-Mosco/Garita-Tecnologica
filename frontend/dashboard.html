@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel | Garita</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <h2>Garita</h2>
+
+        <a href="dashboard.html">Dashboard</a>
+        <a id="menuAdmin" href="admin.html">Admin</a>
+        <a id="menuVisita" href="visita.html">Registrar visita</a>
+        <a id="menuPrerregistro" href="prerregistro.html">Prerregistro QR</a>
+        <a id="menuHistorial" href="historial.html">Historial</a>
+        <a id="menuPlacas" href="placas.html">Consultar placas</a>
+
+        <button onclick="logout()">Salir</button>
+    </aside>
+
+    <main class="content">
+        <h1>Panel principal</h1>
+        <p id="welcome"></p>
+
+        <section class="cards" id="cards"></section>
+
+        <section class="panel">
+            <h2>Accesos rápidos</h2>
+            <p>El menú lateral muestra únicamente las opciones permitidas según el rol del usuario.</p>
+        </section>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>

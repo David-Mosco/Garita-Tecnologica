@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <h2>Garita</h2><a href="dashboard.html">Dashboard</a><a href="visita.html">Registrar visita</a><a
+            href="prerregistro.html">Prerregistro QR</a><a href="historial.html">Historial</a><a
+            href="placas.html">Placas</a><button onclick="logout()">Salir</button>
+    </aside>
+    <main class="content">
+        <h1>Historial de visitas</h1><button onclick="cargar()">Actualizar</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Visitante</th>
+                    <th>Placa</th>
+                    <th>Vivienda</th>
+                    <th>Tipo</th>
+                    <th>Estado</th>
+                    <th>Entrada</th>
+                    <th>Salida</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+    </main>
+    <script src="js/api.js"></script>
+    <script src="js/historial.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+mustAnyRole(['admin', 'agente']);
+async function salida(id) { try { await api(`/visitas/${id}/salida`, { method: 'PATCH', body: JSON.stringify({ observacion: 'Salida registrada desde frontend' }) }); cargar() } catch (e) { alert(e.message) } }
+async function cargar() { tbody.innerHTML = '<tr><td colspan="9">Cargando...</td></tr>'; try { const l = await api('/visitas/historial'); tbody.innerHTML = l.map(v => `<tr><td>${v.id}</td><td>${v.visitante.nombre}</td><td>${v.vehiculo?.placa || ''}</td><td>${v.vivienda.direccion}</td><td>${v.tipo_ingreso}</td><td>${v.estado}</td><td>${new Date(v.entrada_en).toLocaleString()}</td><td>${v.salida_en ? new Date(v.salida_en).toLocaleString() : ''}</td><td>${v.estado === 'DENTRO' ? `<button onclick="salida(${v.id})">Salida</button>` : ''}</td></tr>`).join('') } catch (e) { tbody.innerHTML = `<tr><td colspan="9">${e.message}</td></tr>` } }
+cargar();

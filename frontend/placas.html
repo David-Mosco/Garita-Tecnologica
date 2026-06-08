@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta de placas</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <h2>Garita</h2><a href="dashboard.html">Dashboard</a><a href="visita.html">Registrar visita</a><a
+            href="prerregistro.html">Prerregistro QR</a><a href="historial.html">Historial</a><a
+            href="placas.html">Placas</a><button onclick="logout()">Salir</button>
+    </aside>
+    <main class="content">
+        <h1>Consultar placa vehicular</h1>
+        <form id="placaForm" class="panel"><input id="placa" placeholder="Ejemplo P123ABC"
+                required><button>Buscar</button></form>
+        <pre id="result"></pre>
+    </main>
+    <script src="js/api.js"></script>
+    <script src="js/placas.js"></script>
+</body>
+
+</html>

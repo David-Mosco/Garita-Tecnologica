@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar visita</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <h2>Garita</h2><a href="dashboard.html">Dashboard</a><a href="visita.html">Registrar visita</a><a
+            href="prerregistro.html">Prerregistro QR</a><a href="historial.html">Historial</a><a
+            href="placas.html">Placas</a><button onclick="logout()">Salir</button>
+    </aside>
+    <main class="content">
+        <h1>Registrar visita sin prerregistro</h1>
+        <form id="normalForm" class="grid-form panel"><input placeholder="Nombre visitante" id="nombre" required><input
+                placeholder="DPI o licencia" id="dpi" required><input placeholder="Teléfono" id="telefono"><input
+                placeholder="Placa" id="placa"><input placeholder="Marca" id="marca"><input placeholder="Color"
+                id="color"><input placeholder="Código único del vecino" id="codigo" required><input placeholder="Motivo"
+                id="motivo"><button>Registrar ingreso</button></form>
+        <h2>Registrar con QR</h2>
+        <form id="qrForm" class="panel"><input placeholder="Token QR" id="token" required><button>Registrar ingreso
+                QR</button></form>
+        <pre id="result"></pre>
+    </main>
+    <script src="js/api.js"></script>
+    <script src="js/visita.js"></script>
+</body>
+
+</html>

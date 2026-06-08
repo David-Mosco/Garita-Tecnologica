@@ -1,0 +1,1 @@
+mustAnyRole(['admin', 'agente']); placaForm.addEventListener('submit', async e => { e.preventDefault(); try { const r = await api('/visitas/placas/' + encodeURIComponent(placa.value)); result.textContent = JSON.stringify(r, null, 2) } catch (err) { result.textContent = err.message } });

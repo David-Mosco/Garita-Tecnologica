@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <h2>Garita</h2>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="admin.html">Admin</a>
+        <button onclick="logout()">Salir</button>
+    </aside>
+
+    <main class="content">
+        <h1>Administración</h1>
+
+        <section class="panel">
+            <h2>Crear vivienda</h2>
+            <form id="vivForm" class="grid-form">
+                <input id="direccion" placeholder="Dirección, ejemplo: Casa 08, Sector C" required>
+                <input id="sector" placeholder="Sector, ejemplo: Sector C">
+                <input id="numero" placeholder="Número casa, ejemplo: 08">
+                <button>Guardar vivienda</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Viviendas registradas</h2>
+            <div class="grid-form">
+                <input id="filtroVivienda" placeholder="Buscar por sector, casa o dirección">
+                <select id="ordenVivienda">
+                    <option value="sector">Ordenar por sector</option>
+                    <option value="numero">Ordenar por número de casa</option>
+                    <option value="direccion">Ordenar por dirección</option>
+                </select>
+                <button onclick="cargarViviendas()">Actualizar</button>
+            </div>
+            <div id="viviendas"></div>
+        </section>
+
+        <section class="panel">
+            <h2>Crear vecino</h2>
+            <form id="vecForm" class="grid-form">
+                <input id="vn_nombre" placeholder="Nombre completo" required>
+                <input id="vn_email" placeholder="Correo electrónico" required>
+                <input id="vn_tel" placeholder="Teléfono">
+                <select id="vn_vivienda" required>
+                    <option value="">Seleccione una vivienda</option>
+                </select>
+                <button>Guardar vecino</button>
+            </form>
+        </section>
+
+        <section class="panel">
+            <h2>Vecinos registrados</h2>
+            <div class="grid-form">
+                <input id="filtroVecino" placeholder="Buscar por nombre, correo, vivienda o código">
+                <button onclick="cargarVecinos()">Actualizar</button>
+            </div>
+            <div id="vecinos"></div>
+        </section>
+
+        <pre id="result"></pre>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+
+</html>
